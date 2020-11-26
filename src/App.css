@@ -1,5 +1,6 @@
 body{
   background-color: rgb(24, 24, 34);
+  float: left;
 }
 *{
   box-sizing: border-box;
@@ -10,6 +11,8 @@ body{
   background-color: tomato;
   width: 100vw;
   height: 70px;
+  position: fixed;
+  top: 0;
 }
 .nav-content-container{
   background-color: teal;
@@ -55,4 +58,62 @@ body{
   justify-content: space-around;
   align-items: center;
   height: 100%;
+}
+#product-container{
+  background-color: maroon;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  max-width: 90%;
+  margin-top: 500px;
+}
+.products{
+  background-color: white;
+  height: 310px;
+  width: 350px;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products:hover{
+  height: 320px;
+}
+.image-container{
+  width: 90%;
+  height: 60%;
+}
+#image{
+  height: 90%;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+.item-container{
+  position: relative;
+  height: 40%;
+  width: 90%;
+}
+.title{
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  
+  bottom: 70px;
+  
+}
+.title p{
+  padding: 0;
+  text-align: center;
+}
+.price{
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+.price p{
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bolder;
+
 }

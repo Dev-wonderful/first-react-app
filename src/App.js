@@ -1,11 +1,11 @@
 import './App.css';
-import Navbar from './Navbar'
-import Products from './Products';
+import Navbar from './Nav'
+import {Products} from './Items';
 
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <Products />
     </div>
