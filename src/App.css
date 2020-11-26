@@ -59,18 +59,26 @@ body{
   align-items: center;
   height: 100%;
 }
-#product-container{
+.container{
   background-color: maroon;
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  max-width: 90%;
-  margin-top: 500px;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  padding-bottom: 10vh;
+}
+.grid{
+
 }
 .products{
   background-color: white;
   height: 310px;
-  width: 350px;
+  width: 300px;
   margin-top: 10vh;
   display: flex;
   flex-direction: column;

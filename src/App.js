@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './Nav'
 import {Products} from './Items';
+//import {Displaycontainer} from './Items';
 
 
 function App() {

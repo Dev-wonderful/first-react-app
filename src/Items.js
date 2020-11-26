@@ -24,10 +24,10 @@ export function Products(){
         //console.log(Contents[8]);
 
         return(
-            <div>
+            <div className='container'>
                 {Contents.map(contentlist => (
                     <Displayproducts key={contentlist.id} id={contentlist.id} title={contentlist.title} price={contentlist.price} category={contentlist.category} description={contentlist.description} image={contentlist.image} />
-                    
+
                     )
                 )};
             </div>
@@ -46,7 +46,7 @@ export function Products(){
     
 }
 
-export function Displayproducts({id, title, price, category, description, image}){
+function Displayproducts({id, title, price, category, description, image}){
 
     <Displayproducts key={id}/>
 
@@ -78,10 +78,11 @@ export function Displayproducts({id, title, price, category, description, image}
     );
 };
 
-React.createElement('div',{id:'product-container'}, [<Displayproducts />])
+//ReactDOM.render(<Products />, document.querySelector('#container'))
 
-ReactDOM.render(React.createElement('section',{id:'product-container'}, [<Displayproducts />])
-,document.querySelector('#container'));
+
+
+
 
 
 
