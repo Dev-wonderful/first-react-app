@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './Nav'
 import Products from './products.jsx';
-import Cart from '../Practice/components/cart';
+import Cart from './cart';
 //import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import React, { Component } from 'react';
 
