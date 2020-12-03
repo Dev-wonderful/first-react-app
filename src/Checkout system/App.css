@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(24, 24, 34);
+  ackground-color: rgb(24, 24, 34);
   float: left;
 }
 *{
@@ -8,22 +8,22 @@ body{
   margin: 0;
 }
 .nav{
-  background-color: tomato;
+  background-color:  rgb(24, 24, 34);;
   width: 100vw;
   height: 70px;
-  position: fixed;
-  top: 0;
+  /**position: ;
+  top: 0;**/
 }
 .nav-content-container{
-  background-color: teal;
-  max-width: 1100px;
+  background-color: none;
+  /**max-width: 1100px;**/
   margin: auto;
   overflow: auto;
   color: whitesmoke;
   height: 100%;
 }
 .nav-display{
-  background-color: rgb(30, 211, 211);
+  background-color: none;
   width: 25%;
 }
 .nav-link{
@@ -60,32 +60,43 @@ body{
   height: 100%;
 }
 .container{
-  background-color: maroon;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  ackground-color: maroon;
   height: 100%;
   width: 100vw;
-  justify-content: center;
-  align-items: center;
+  padding: 2vw;
   margin-top: 200px;
   margin-bottom: 100px;
   padding-bottom: 10vh;
 }
+.container-flex{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .grid{
-
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+justify-content: center;
+align-items: center;
 }
 .products{
-  background-color: white;
+  background-color: whitesmoke;
   height: 310px;
   width: 300px;
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
 }
 .products:hover{
   height: 320px;
+  background-color: white;
+  transform: scale(1);
 }
 .image-container{
   width: 90%;
@@ -113,15 +124,65 @@ body{
 .title p{
   padding: 0;
   text-align: center;
+  font-size: 15px;
 }
 .price{
   position: absolute;
   bottom: 20px;
   width: 100%;
+  padding-top: 5px;
 }
 .price p{
+  background-color: rosybrown;
   text-align: center;
   font-size: 3.5vh;
   font-weight: bolder;
+  float: left;
+  margin-left: 20px;
 
+}
+.btn{
+  border-radius: 3px;
+  background-color: lightblue;
+  color: navy;
+  float: right;
+  margin-right: 20px;
+  height: 23px;
+  padding: 2px;
+}
+.view{
+  background-color: black;
+  position: fixed;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 1000px;
+}
+.cart-container{
+  background-color: maroon;
+  height: fit-content;
+  width: 100vw;
+  padding: 2vw;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  padding-bottom: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.cart-image-container{
+  width: 40%;
+}
+.other-container{
+  width: 60%;
+}
+.cart{
+  background-color: seagreen;
+}
+.total-price{
+  background-color: slategray;
+  padding: 20px;
 }
