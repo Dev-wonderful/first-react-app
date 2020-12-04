@@ -32,7 +32,7 @@ const Products = ({ product, onAddToCart }) => {
                         <div className='item-container'>
                             
                             <div className='title'><p>{item.title}</p></div>
-                            <div className='price'><p>${item.price}</p><button className='btn' onClick={() => props.onAddToCart(item)}>Add to cart</button></div>
+                            <div className='price'><p>${item.price}</p><button className='btn' onClick={() => props.onAddToCart(item)}>Add To Cart</button></div>
                             
                         </div>
 
@@ -47,7 +47,7 @@ const Products = ({ product, onAddToCart }) => {
 
 
         return(
-            <div className='container grid'>
+            <div className='container container-flex '>
                 {product.map(items => <Displayproducts key={items.id} products={items} onAddToCart={onAddToCart}/>)}
             </div>
         )

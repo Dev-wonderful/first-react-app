@@ -1,0 +1,51 @@
+.nav{
+    background-color:  rgb(24, 24, 34);;
+    width: 100vw;
+    height: 70px;
+    /**position: sticky;
+    top: 0;**/
+    z-index: 1;
+  }
+  .nav-content-container{
+    background-color: none;
+    /**max-width: 1100px;**/
+    margin: auto;
+    overflow: auto;
+    color: whitesmoke;
+    height: 100%;
+  }
+  .nav-display{
+    background-color: none;
+    width: 25%;
+  }
+  .nav-link{
+    cursor: pointer;
+    width: 50%;
+    list-style: none;
+  }
+  .nav-link li:hover{
+    border-bottom: 2px aliceblue solid;
+  }
+  .nav-search{
+    width: 25%;
+    background-color: rgb(30, 68, 30);
+  }
+  .nav-search input{
+    height: 40%;
+    font-size: 4vh, 3vw;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .nav-search button{
+    height: 30%;
+    width: 30%;
+    color: aliceblue;
+    background-color: rgb(106, 190, 106);
+    font-size: 5vh, 3vw;
+    border-radius: 5px;
+  }
+  .menu-bars{
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+  }

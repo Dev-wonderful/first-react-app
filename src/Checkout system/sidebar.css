@@ -1,0 +1,129 @@
+.cart{
+    background-color:  rgb(24, 24, 20);
+    position: relative;
+    top: auto;
+    left: -40vw;
+    height: 1000px;
+    width: 40vw;
+    padding: 20px;
+    padding-bottom: 0;
+    padding-top: 5vh;
+    transition: 500ms;
+    z-index: 2;
+    overflow-y: scroll;
+    border-bottom-right-radius: 10%;
+  }
+  .cart.active{
+    left: 0;
+    transition: 500ms;
+  }
+.cart-container{
+    background-color: whitesmoke;
+    height: 350px;
+    width: 100%;
+    padding: 0 2vw 0 2vw;
+    margin-top: 5vh;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border-style: groove;
+    border: 2px solid  purple;
+  }
+  .flexx{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: fit-content;
+  }
+  cart-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    }
+.cart-image-container{
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 150px;
+    height: 40%;
+  }
+.other-container{
+    background-color:none;
+    height: 60%;
+    color: teal;
+    width: 250px;
+    padding: 5px;
+    border-radius: 10px;
+    border-style: groove;
+    border: 1px solid green;
+  }
+  .other-container p{
+      background-color: none;
+      font-size: small;
+      margin: 10px;
+      text-align: center;
+  }
+  .bottom-container{
+      background-color: none;
+      height: 10%;
+      padding: 3px;
+      width: 80%;
+      margin: 5px;
+  }
+  .bottom-container p{
+      background-color: none;
+      padding: 3px;
+      margin: 3px;
+  }
+  .description{
+      font-size: small;
+      background-color: none;
+      height: 50%;
+      overflow: scroll;
+      overflow-x: hidden;
+  }
+  .cart-price{
+      color: rgb(12, 12, 156);
+  }
+  .total-price{
+    position: sticky;
+    height: 100px;
+    bottom: 0;
+    margin-bottom: 0;
+    background-color: slategray;
+    margin-top: 0;
+    padding: 20px;
+  }
+  .remove-btn{
+      background-color: whitesmoke;
+      color: red;
+      border-style: groove;
+      border: 1px solid red;
+      border-radius: 10px;
+      padding: 5px;
+  }
+  .remove-btn:hover{
+      cursor: pointer;
+      background-color: red;
+      color: whitesmoke;
+  }
+  .clear-btn{
+    background-color:rgb(143, 10, 10);
+    color: whitesmoke;
+    border-style: groove;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .clear-btn:hover{
+      cursor: pointer;
+      background-color: red;
+  }
+  

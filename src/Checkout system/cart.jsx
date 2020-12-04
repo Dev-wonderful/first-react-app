@@ -1,13 +1,29 @@
 import React from 'react';
+import { AiOutlineClose } from "react-icons/ai"
 import CartItem from './cartItem';
+import { Link } from 'react-router-dom';
+import './sidebar.css'
 
-const Cart = ({ item, onRemove, onClearCart, totalPrice }) => {
+const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar }) => {
+
+   //console.log('onremove ' + onRemove)
     
         return ( 
-            <div className='cart'>
-                <button className='btn' onClick={() => onClearCart()}>Clear Cart</button>
+            <div className={sideBar ? 'cart active' : 'cart'}>
+
+
+                <div className='flexx'>
+                    <button className='clear-btn' onClick={() => onClearCart()}>Clear Cart</button>
+                    <Link to="#" className='menu-bars'>
+                        <AiOutlineClose onClick={onCloseSideBar}/>
+                    </Link>
+                </div>
+
                 {item.map(item => <CartItem key={item.id} item={item} onRemove={onRemove}/>)}
-                <span className='total-price'>Total price: ${totalPrice}</span>
+                
+                <div className='total-price'>Total price: ${totalPrice}</div>
+
+                
             </div>
          );
     

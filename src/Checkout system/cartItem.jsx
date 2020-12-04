@@ -1,4 +1,5 @@
 import React from 'react';
+import './sidebar.css'
 
 const CartItem = (props) => {
 
@@ -6,25 +7,25 @@ const CartItem = (props) => {
 
     
         return (
-            <div className='cart-container'>
+            <div className='cart-container cart-grid'>
 
                 <div className='cart-image-container'>
 
-                    <img id='image' src={item.image} alt={item.title}/>
+                    <img id='cart-image' src={item.image} alt={item.title}/>
 
                 </div>
 
                 <div className='other-container container-flex'>
 
-                    <p>{item.description}</p>
+                    <div className='description'>{item.description}</div>
 
-                    <p>{item.category}</p>
+                    <p>Category: {item.category}</p>
 
-                    <div className='bottom-container'>
+                    <div className='bottom-container flex'>
 
-                        <p>${item.price}</p>
+                        <p className='cart-price'>${item.price}</p>
                         
-                        <button className='btn' onClick={() => props.onRemove(item)}>Remove</button>
+                        <button className='remove-btn' onClick={() => props.onRemove(item)}>Remove</button>
 
                     </div>
 

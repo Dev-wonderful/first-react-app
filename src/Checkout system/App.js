@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './Nav'
 import Products from './products.jsx';
 import Cart from './cart';
-//import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import React, { Component } from 'react';
 
 
@@ -14,7 +14,9 @@ class App extends Component {
 
     cartItem : [
       {"id":18,"title":"MBJ Women's Solid Short Sleeve Boat Neck V ","price":9.85,"description":"95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem","category":"women clothing","image":"https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"},{"id":19,"title":"Opna Women's Short Sleeve Moisture","price":7.95,"description":"100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort","category":"women clothing","image":"https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"},{"id":20,"title":"DANVOUY Womens T Shirt Casual Cotton Short","price":12.99,"description":"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.","category":"women clothing","image":"https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"}
-    ]
+    ],
+
+    sideBar : false
    }
 
    
@@ -48,6 +50,17 @@ class App extends Component {
      return total + num
    }
 
+   showSideBar = () => {
+    this.setState({sideBar: true})
+    console.log('sidebar was called ' + this.state.sideBar)
+   }
+
+   closeSideBar = () => {
+    this.setState({sideBar: false})
+    console.log('sidebar was called ' + this.state.sideBar)
+   }
+
+
   render() { 
     const totalAmount = () => {
      const total = this.state.cartItem.map(c => c.price
@@ -61,14 +74,22 @@ class App extends Component {
       
     }
 
+    
     totalAmount()
     return ( 
     
-        <div>
-          <Navbar />
-          <Cart key={this.state.cartItem.id} item={this.state.cartItem} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()}/>
-          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart}/>  
-        </div>
+        <>
+
+          
+          <Router>
+          <Navbar onShowSideBar={this.showSideBar}/>
+            <Switch>
+              <Route path='/'/>
+            </Switch>
+          <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()}/>
+          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart}/>
+          </Router>  
+        </>
   
      );
   }
