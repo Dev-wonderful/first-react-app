@@ -18,7 +18,9 @@ class App extends Component {
 
     sideBar : false ,
 
-    quantity : []
+    quantity : [],
+
+
    }
 
    
@@ -33,6 +35,20 @@ class App extends Component {
      console.log(item)
      console.log('add to cart was called ' + product.id ); 
      console.log(this.state.cartItem)
+
+     return (
+       <>
+        {
+           setTimeout(() => {
+            <div className='notification z-10 w-4/5 leading-normal h-14 px-1 bg-blue-400'>
+                <p>This Item Has Been Added To Your Cart</p>
+                <p>Check your cart at the top left corner</p>
+            </div>
+      
+            }, 3000)
+        }
+       </>
+     )
    }
 
    handleRemove =  (item) => {

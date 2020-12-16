@@ -57,10 +57,18 @@ const Products = ({ product, onAddToCart }) => {
             );
         };
 
+        
+         
+
 
         return(
             <div className='container container-flex h-screen w-screen '>
-                {product.map(items => <Displayproducts key={items.id} products={items} onAddToCart={onAddToCart}/>)}
+
+                
+
+                {product.map(items => <Displayproducts key={items.id} products={items} onAddToCart={onAddToCart}/>
+                    
+                )}
             </div>
         )
 

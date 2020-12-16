@@ -14,7 +14,7 @@ const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar
 
                 <div className='flexx'>
                     <button className='clear-btn' onClick={() => onClearCart()}>Clear Cart</button>
-                    <Link to="#" className='menu-bars'>
+                    <Link to="#" className='bg-red-600'>
                         <AiOutlineClose onClick={onCloseSideBar}/>
                     </Link>
                 </div>
