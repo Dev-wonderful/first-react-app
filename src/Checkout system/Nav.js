@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css'
-import { FaBars } from "react-icons/fa"
+import { FaCartPlus } from "react-icons/fa"
 import { Link } from 'react-router-dom';
 //import Cart from './cart';
 
@@ -21,19 +21,18 @@ function Navbar(props) {
                 <div className='nav-content-container flex'>
                 
                     <Link to="#" className='menu-bars'>
-                        <FaBars onClick={props.onShowSideBar}/>
+                        <FaCartPlus onClick={props.onShowSideBar}/>
                     </Link>
                 
-                    <span className='nav-display flex'><p>I am here</p></span>
+                   
 
                     <ul className='nav-link flex'>
-                        <li>Home</li>
-                        <li>About</li>
+                       
                         <li>Products</li>
-                        <li>User Account</li>
+
                     </ul>
 
-                    <div className='nav-search flex'>
+                    <div className='nav-search w-3/5 sm:w-3/6 flex'>
                         <input type="text" placeholder='Search for Products'></input>
                         <button type='submit'>Search</button>
                     </div>

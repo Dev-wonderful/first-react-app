@@ -14,24 +14,21 @@
     color: whitesmoke;
     height: 100%;
   }
-  .nav-display{
-    background-color: none;
-    width: 25%;
-  }
+  
   .nav-link{
     cursor: pointer;
-    width: 50%;
+    width: 30%;
     list-style: none;
   }
   .nav-link li:hover{
     border-bottom: 2px aliceblue solid;
   }
   .nav-search{
-    width: 25%;
     background-color: rgb(30, 68, 30);
   }
   .nav-search input{
     height: 40%;
+    width: 60%;
     font-size: 4vh, 3vw;
     text-align: center;
     border-radius: 5px;

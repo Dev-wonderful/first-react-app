@@ -1,7 +1,6 @@
 .products{
     background-color: whitesmoke;
     height: 310px;
-    width: 350px;
     display: flex;
     margin-top: 10vh;
     flex-direction: column;

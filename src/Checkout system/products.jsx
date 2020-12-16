@@ -19,7 +19,7 @@ const Products = ({ product, onAddToCart }) => {
             return(
                 <>
                     
-                    <div className='products py-5 flex-initial'>
+                    <div className='products py-5 w-4/5 sm:w-3/6 md:w-96 lg:w-1/4'>
 
                         <div className='image-container box-border'>
 

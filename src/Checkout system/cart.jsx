@@ -9,7 +9,7 @@ const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar
    //console.log('onremove ' + onRemove)
     
         return ( 
-            <div className={sideBar ? 'cart active' : 'cart'}>
+            <div className={sideBar ? 'cart active w-screen sm:w-4/5 md:w-9/12' : 'cart w-0'}>
 
 
                 <div className='flexx'>

@@ -7,15 +7,15 @@ const CartItem = (props) => {
 
     
         return (
-            <div className='cart-container cart-grid'>
+            <div className='cart-container cart-grid px-4 py-4'>
 
-                <div className='cart-image-container'>
+                <div className='cart-image-container w-4/5 h-2/5 sm:w-1/5 sm:h-3/5'>
 
                     <img id='cart-image' src={item.image} alt={item.title}/>
 
                 </div>
 
-                <div className='other-container container-flex'>
+                <div className='other-container w-4/5 sm:w-9/12 container-flex'>
 
                     <div className='description'>{item.description}</div>
 
