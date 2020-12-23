@@ -4,6 +4,8 @@ import Products from './products.jsx';
 import Cart from './cart';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import React, { Component } from 'react';
+import Modal from './modal';
+//import Modal from './modal';
 
 
 class App extends Component {
@@ -20,6 +22,8 @@ class App extends Component {
 
     quantity : [],
 
+    isOpen : false
+
 
    }
 
@@ -34,21 +38,9 @@ class App extends Component {
      this.setState({cartItem: this.state.cartItem.concat(item)})
      console.log(item)
      console.log('add to cart was called ' + product.id ); 
-     console.log(this.state.cartItem)
-
-     return (
-       <>
-        {
-           setTimeout(() => {
-            <div className='notification z-10 w-4/5 leading-normal h-14 px-1 bg-blue-400'>
-                <p>This Item Has Been Added To Your Cart</p>
-                <p>Check your cart at the top left corner</p>
-            </div>
-      
-            }, 3000)
-        }
-       </>
-     )
+     console.log(this.Pop)
+     
+    this.Pop()
    }
 
    handleRemove =  (item) => {
@@ -78,6 +70,13 @@ class App extends Component {
     console.log('sidebar was called ' + this.state.sideBar)
    }
 
+  Pop = () => {
+    this.setState({isOpen: true});
+    setTimeout(() => this.setState({isOpen: false}), 2500);
+  }
+
+  
+
 
   render() { 
     const totalAmount = () => {
@@ -92,7 +91,6 @@ class App extends Component {
       
     }
 
-    
     totalAmount()
     return ( 
     
@@ -101,6 +99,7 @@ class App extends Component {
           
           <Router>
           <Navbar onShowSideBar={this.showSideBar}/>
+          <Modal open={this.state.isOpen}>This Item has been added to your Cart, Check the top left corner</Modal>
             <Switch>
               <Route path='/'/>
             </Switch>

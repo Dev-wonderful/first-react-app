@@ -1,6 +1,7 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
 import './product.css';
+import Modal from "./modal";
 //import '../index.css';
 //import Displayproducts from './Displayproducts';
 
@@ -66,7 +67,7 @@ const Products = ({ product, onAddToCart }) => {
 
                 
 
-                {product.map(items => <Displayproducts key={items.id} products={items} onAddToCart={onAddToCart}/>
+                {product.map((items) => <Displayproducts key={items.id} products={items} onAddToCart={onAddToCart}/>
                     
                 )}
             </div>
