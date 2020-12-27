@@ -16,7 +16,7 @@ const Modal_Styles = {
 const Modal_Close = {
     position: 'fixed',
     top: '50%',
-    left: '-800px',
+    left: '-85vw',
     transition: '500ms',
     zIndex: 1000,
     backgroundColor: 'lightblue',

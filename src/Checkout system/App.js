@@ -20,7 +20,28 @@ class App extends Component {
 
     sideBar : false ,
 
-    quantity : [],
+    quantity : [
+      {id: 1, value: 1},
+      {id: 2, value: 1},
+      {id: 3, value: 1},
+      {id: 4, value: 1},
+      {id: 5, value: 2},
+      {id: 6, value: 1},
+      {id: 7, value: 1},
+      {id: 8, value: 1},
+      {id: 9, value: 1},
+      {id: 10, value: 1},
+      {id: 11, value: 1},
+      {id: 12, value: 1},
+      {id: 13, value: 1},
+      {id: 14, value: 1},
+      {id: 15, value: 1},
+      {id: 16, value: 1},
+      {id: 17, value: 1},
+      {id: 18, value: 1},
+      {id: 19, value: 1},
+      {id: 20, value: 1}
+    ],
 
     isOpen : false
 
@@ -75,6 +96,13 @@ class App extends Component {
     setTimeout(() => this.setState({isOpen: false}), 2500);
   }
 
+  handleQuantity = () => {
+
+    this.state.quantity.map(qty => console.log('qty ' + qty.value))
+    this.state.Productlist.map(qty => console.log('qty ' + qty))
+    
+  }
+
   
 
 
@@ -91,7 +119,9 @@ class App extends Component {
       
     }
 
-    totalAmount()
+    this.handleQuantity()
+
+    //totalAmount()
     return ( 
     
         <>
@@ -104,7 +134,7 @@ class App extends Component {
               <Route path='/'/>
             </Switch>
           <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()}/>
-          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart}/>
+          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart} quantityState={this.handleQuantity} quant={this.state.quantity}/>
           </Router>  
         </>
   
