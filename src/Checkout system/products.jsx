@@ -13,7 +13,8 @@ const Products = ({ product, onAddToCart, quant }) => {
 
         const Displayproducts = ({item, qty, onAddToCart}) => {
             
-            console.log('eagle' + qty)
+            console.log('eagle' + item)
+           // console.log('eaglet' + qty)
 
             //const  item  = props.products;
             //const quantityState = props.quantityState;
@@ -21,21 +22,29 @@ const Products = ({ product, onAddToCart, quant }) => {
 
             const iteration = () => {
                 for (var key in item) {
-                    if (item.hasOwnProperty(key)){
+                    if (item.hasOwnProperty(key) && key === 'id'){
+                        console.log('id ' + item[key])
                         for (let q of qty){
+                            console.log('q ' + qty.indexOf(q))
                             for(var keyQ in  q){
+                                console.log('keyQ ' + keyQ + ' ' + q.value)
                                 if(q.hasOwnProperty(keyQ)){
-                                    if(key === keyQ){
-                                        console.log('Hurray i got here ' + qty.indexOf(q[keyQ]))
+                                    console.log('keyQ-YES')
+                                    if(keyQ === 'id' && q[keyQ] === item[key]){
+                                        console.log('Hurray i got here ' + q[keyQ] + ' ' + qty.indexOf(q))
+                                        const qtity = q.value 
+                                        console.log('hi ' +qtity) 
+                                        return qtity
                                     }
                                 }
                             }
                         }
                     }
-                }
+                }    
+                
             }
 
-            iteration();
+            
             
             return(
                 <>
@@ -60,7 +69,7 @@ const Products = ({ product, onAddToCart, quant }) => {
 
                                 <div className='qty flex flex-row px-2'>
                                     <button className='decrement flex-1'>-</button>
-                                    <span className='qty-display flex-1'>1</span>
+                                    <span className='qty-display flex-1'>{iteration()}</span>
                                     <button className='increment flex-1'>+</button>
                                 </div>
 
@@ -87,7 +96,9 @@ const Products = ({ product, onAddToCart, quant }) => {
 
                 
 
-                {product.map((items) => <Displayproducts key={items.id} item={items} onAddToCart={onAddToCart} qty={quant}/>)}
+                {product.map((items) => <Displayproducts key={items.id} item={items} onAddToCart={onAddToCart} qty={quant}/>
+                    
+                )}
                     
                 
             </div>
