@@ -6,44 +6,41 @@ import './product.css';
 //import '../index.css';
 //import Displayproducts from './Displayproducts';
 
-const Products = ({ product, onAddToCart, quant }) => {
-    
+const Products = ({ product, onAddToCart, quant, onQtyIncrement }) => {
+
     console.log('baba' + quant)
+
+    const loop = (def) => {
+        const list = quant.map(element => element.id)
+        console.log('list is ' + list)
+        const found = list.find(element => element === def)
+        console.log(' found is ' + found)
+        const main = quant.map(element => {
+            if(element.id === found){
+                return element
+            }
+            return null
+        })
+        console.log(`main is ${main}`)
+        const foundMain = main.find(element => element)
+        console.log(`foundMain is ${foundMain}`)
+
+        return foundMain
+
+        
+    }
     
 
         const Displayproducts = ({item, qty, onAddToCart}) => {
             
-            console.log('eagle' + item)
-           // console.log('eaglet' + qty)
+            console.log('eagle' + JSON.stringify(item))
+            console.log('eaglet' + qty)
 
             //const  item  = props.products;
             //const quantityState = props.quantityState;
             //const quantity = props.quantity;
 
-            const iteration = () => {
-                for (var key in item) {
-                    if (item.hasOwnProperty(key) && key === 'id'){
-                        console.log('id ' + item[key])
-                        for (let q of qty){
-                            console.log('q ' + qty.indexOf(q))
-                            for(var keyQ in  q){
-                                console.log('keyQ ' + keyQ + ' ' + q.value)
-                                if(q.hasOwnProperty(keyQ)){
-                                    console.log('keyQ-YES')
-                                    if(keyQ === 'id' && q[keyQ] === item[key]){
-                                        console.log('Hurray i got here ' + q[keyQ] + ' ' + qty.indexOf(q))
-                                        const qtity = q.value 
-                                        console.log('hi ' +qtity) 
-                                        return qtity
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }    
-                
-            }
-
+            
             
             
             return(
@@ -69,8 +66,8 @@ const Products = ({ product, onAddToCart, quant }) => {
 
                                 <div className='qty flex flex-row px-2'>
                                     <button className='decrement flex-1'>-</button>
-                                    <span className='qty-display flex-1'>{iteration()}</span>
-                                    <button className='increment flex-1'>+</button>
+                                    <span className='qty-display flex-1'>{qty.value}</span>
+                                    <button className='increment flex-1' onClick={() => onQtyIncrement(item)}>+</button>
                                 </div>
 
                                 <button className='btn w-1/3' onClick={() => onAddToCart(item)}>Add To Cart</button>
@@ -96,7 +93,7 @@ const Products = ({ product, onAddToCart, quant }) => {
 
                 
 
-                {product.map((items) => <Displayproducts key={items.id} item={items} onAddToCart={onAddToCart} qty={quant}/>
+                {product.map((items) => <Displayproducts key={items.id} item={items} onAddToCart={onAddToCart} qty={loop(items.id)}/>
                     
                 )}
                     

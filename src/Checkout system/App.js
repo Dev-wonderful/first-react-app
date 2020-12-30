@@ -21,8 +21,8 @@ class App extends Component {
     sideBar : false ,
 
     quantity : [
-      {id: 1, value: 1},
-      {id: 2, value: 1},
+      {id: 1, value: 10},
+      {id: 2, value: 111},
       {id: 3, value: 1},
       {id: 4, value: 1},
       {id: 5, value: 2},
@@ -102,6 +102,40 @@ class App extends Component {
     this.state.Productlist.map(qty => console.log('qty ' + qty))
     
   }
+  handleQuantityIncrement = (item) => {
+    const quantity = this.state.quantity;
+    const product = this.state.Productlist
+    console.log('item ' + item)
+    const index = product.indexOf(item)
+    console.log('index ' + index)
+    const id = product[index].id
+    console.log('id ' + id)
+
+
+    for (let qtyObj of quantity) {
+      for(var qtyId in qtyObj){
+        //console.log('prodId ' + prodId)
+        if(qtyId === 'id'){
+          const qId = qtyObj[qtyId]
+          //console.log('here ' + qId)
+          if (id === qId){
+            console.log('here2')
+            console.log('qtyObj ' + qtyObj)
+            const qIndex = quantity.indexOf(qtyObj)
+            console.log('qIndex ' + qIndex)
+            quantity[qIndex].value++
+            this.setState({quantity: this.state.quantity})
+            
+            
+          }
+        }
+      }
+    }
+    //const index = quantity.indexOf(itemID);
+    //console.log('index ' + index)
+    //let newQty = state[index].value++;
+    //this.setState({newQty})
+  }
 
   
 
@@ -134,7 +168,7 @@ class App extends Component {
               <Route path='/'/>
             </Switch>
           <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()}/>
-          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart} quantityState={this.handleQuantity} quant={this.state.quantity}/>
+          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart} quantityState={this.handleQuantity} quant={this.state.quantity} onQtyIncrement={this.handleQuantityIncrement}/>
           </Router>  
         </>
   
