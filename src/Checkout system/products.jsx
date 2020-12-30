@@ -6,7 +6,7 @@ import './product.css';
 //import '../index.css';
 //import Displayproducts from './Displayproducts';
 
-const Products = ({ product, onAddToCart, quant, onQtyIncrement }) => {
+const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}) => {
 
     console.log('baba' + quant)
 
@@ -65,9 +65,9 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement }) => {
                                 <p>${item.price}</p>
 
                                 <div className='qty flex flex-row px-2'>
-                                    <button className='decrement flex-1'>-</button>
+                                    <button className='decrement flex-1' onClick={() => onQtyDecrement(qty)}>-</button>
                                     <span className='qty-display flex-1'>{qty.value}</span>
-                                    <button className='increment flex-1' onClick={() => onQtyIncrement(item)}>+</button>
+                                    <button className='increment flex-1' onClick={() => onQtyIncrement(qty)}>+</button>
                                 </div>
 
                                 <button className='btn w-1/3' onClick={() => onAddToCart(item)}>Add To Cart</button>
