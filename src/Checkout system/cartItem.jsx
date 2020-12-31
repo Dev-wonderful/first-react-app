@@ -32,9 +32,9 @@ const CartItem = (props) => {
                         <button className='remove-btn' onClick={() => props.onRemove(item)}>Remove</button>
 
                         <div className='qty flex flex-row px-2'>
-                            <button className='decrement flex-1' onClick={() => props.onCartQtyDecrement(props.quanty.value)}>-</button>
+                            <button className='decrement flex-1' onClick={() => props.onCartQtyDecrement(props.quanty)}>-</button>
                             <span className='qty-display flex-1'>{props.quanty.value}</span>
-                            <button className='increment flex-1' onClick={() => props.onCartQtyIncrement(props.quanty.value)}>+</button>
+                            <button className='increment flex-1' onClick={() => props.onCartQtyIncrement(props.quanty)}>+</button>
                         </div>
 
 
