@@ -121,4 +121,20 @@
       cursor: pointer;
       background-color: red;
   }
-  
+  .qty{
+    background-color: blue;
+    width: 30%;
+  }
+  .qty-display{
+      background-color: magenta;
+      text-align: center;
+      width: 40%;
+  }
+  .decrement{
+    background-color: red;
+    width: 30%
+  }
+  .increment{
+    background-color: gainsboro;
+    width: 30%
+  }

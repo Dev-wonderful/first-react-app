@@ -4,6 +4,10 @@ import './sidebar.css'
 const CartItem = (props) => {
 
     const item = props.item;
+    //const qtyState = props.quantityState
+    console.log(props.quanty)
+
+   
 
     
         return (
@@ -26,6 +30,13 @@ const CartItem = (props) => {
                         <p className='cart-price'>${item.price}</p>
                         
                         <button className='remove-btn' onClick={() => props.onRemove(item)}>Remove</button>
+
+                        <div className='qty flex flex-row px-2'>
+                            <button className='decrement flex-1' onClick={() => props.onCartQtyDecrement(props.quanty.value)}>-</button>
+                            <span className='qty-display flex-1'>{props.quanty.value}</span>
+                            <button className='increment flex-1' onClick={() => props.onCartQtyIncrement(props.quanty.value)}>+</button>
+                        </div>
+
 
                     </div>
 

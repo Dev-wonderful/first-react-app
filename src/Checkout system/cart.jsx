@@ -4,10 +4,29 @@ import CartItem from './cartItem';
 import { Link } from 'react-router-dom';
 import './sidebar.css'
 
-const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar }) => {
+const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar, onCartQtyIncrement, onCartQtyDecrement, quanty, quantityState }) => {
 
    //console.log('onremove ' + onRemove)
-    
+   const cartQuantity = (def) => {
+
+        const list = quantityState.map(element => element.id)
+        console.log('list is ' + list)
+        const found = list.find(element => element === def)
+        console.log(' found is ' + found)
+        const main = quantityState.map(element => {
+            if(element.id === found){
+                return element
+            }
+            return null
+        })
+        console.log(`main is ${main}`)
+        const foundMain = main.find(element => element)
+        console.log(`foundMain is ${JSON.stringify(foundMain)}`)
+
+        return foundMain
+
+   }
+
         return ( 
             <div className={sideBar ? 'cart active w-screen sm:w-4/5 md:w-9/12' : 'cart w-0'}>
 
@@ -19,7 +38,7 @@ const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar
                     </Link>
                 </div>
 
-                {item.map(item => <CartItem key={item.id} item={item} onRemove={onRemove}/>)}
+                {item.map(item => <CartItem key={item.id} item={item} onRemove={onRemove} onCartQtyIncrement={onCartQtyIncrement} onCartQtyDecrement={onCartQtyDecrement} quanty={cartQuantity(item.id)} qtystate={quantityState}/>)}
                 
                 <div className='total-price'>Total price: ${totalPrice}</div>
 

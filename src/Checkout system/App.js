@@ -50,7 +50,7 @@ class App extends Component {
 
    
 
-   handleAddToCart = (product) => {
+   handleAddToCart = (product, quantity) => {
      
      //const cartItem = [...this.state.cartItem];
      const products  = this.state.Productlist
@@ -61,7 +61,16 @@ class App extends Component {
      console.log('add to cart was called ' + product.id ); 
      console.log(this.Pop)
      
+     this.handleCartQuantity(quantity)
     this.Pop()
+   }
+
+   handleCartQuantity = (quantity) => {
+     console.log(quantity)
+     //console.log(`cart quantity ${quantity}`)
+     const cartItemQty = quantity
+
+     return cartItemQty
    }
 
    handleRemove =  (item) => {
@@ -123,14 +132,14 @@ class App extends Component {
       
       )
       const final = total.reduce(this.getSum, 0);
-      console.log('here ' + total)
-      console.log('final ' + final);
+      //console.log('here ' + total)
+      //console.log('final ' + final);
 
       return final
       
     }
 
-    
+   // this.handleCartQuantity()
     //totalAmount()
     return ( 
     
@@ -139,12 +148,17 @@ class App extends Component {
           
           <Router>
           <Navbar onShowSideBar={this.showSideBar}/>
+
           <Modal open={this.state.isOpen}>This Item has been added to your Cart, Check the top left corner</Modal>
+
             <Switch>
               <Route path='/'/>
             </Switch>
-          <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()}/>
-          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart} quantityState={this.handleQuantity} quant={this.state.quantity} onQtyIncrement={this.handleQuantityIncrement} onQtyDecrement={this.handleQuantityDecrement}/>
+
+          <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()} onCartQtyIncrement={this.handleQuantityIncrement} onCartQtyDecrement={this.handleQuantityDecrement} quanty={this.handleCartQuantity} quantityState={this.state.quantity}/>
+
+          <Products key={this.state.Productlist.id} product={this.state.Productlist} onAddToCart={this.handleAddToCart}  quant={this.state.quantity} onQtyIncrement={this.handleQuantityIncrement} onQtyDecrement={this.handleQuantityDecrement}/>
+
           </Router>  
         </>
   
