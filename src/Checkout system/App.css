@@ -18,8 +18,10 @@ body{
 .container{
   position: absolute;
   top: 10vh;
+  bottom: 10vh;
   height: 100%;
   padding-bottom: 20vh;
+  
 }
 .container-flex{
   display: flex;

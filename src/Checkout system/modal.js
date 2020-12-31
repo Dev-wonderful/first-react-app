@@ -2,7 +2,7 @@ import React from 'react';
 
 const Modal_Styles = {
     position: 'fixed',
-    top: '50%',
+    top: '15%',
     left: '0',
     zIndex: 1000,
     backgroundColor: 'lightblue',
@@ -10,12 +10,17 @@ const Modal_Styles = {
     width: '80%',
     textAlign: 'center',
     lineHeight: '70px',
-    transition: '500ms'
+    transition: '500ms',
+    borderTopRightRadius: '15px',
+    borderBottomRightRadius: '15px',
+    fontStyle: 'italic',
+    fontFamily: 'sanSerif',
+    fontSize: 'larger'
 }
 
 const Modal_Close = {
     position: 'fixed',
-    top: '50%',
+    top: '15%',
     left: '-85vw',
     transition: '500ms',
     zIndex: 1000,

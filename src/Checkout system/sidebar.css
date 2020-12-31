@@ -122,20 +122,25 @@
       background-color: red;
   }
   .qty{
-    background-color: blue;
+    background-color: none;
     width: 30%;
+    height: fit-content;
   }
   .qty-display{
-      background-color: magenta;
+      background-color: none;
       text-align: center;
       width: 40%;
   }
   .decrement{
-    background-color: red;
+    background-color: none;
+    border: 1px solid red;
+    border-style: groove;
     width: 30%
   }
   .increment{
-    background-color: gainsboro;
+    background-color: none;
+    border: 1px solid green;
+    border-style: groove;
     width: 30%
   }
   .empty{

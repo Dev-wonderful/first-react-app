@@ -16,7 +16,7 @@
     /**transform: scale(1);**/
   }
   .image-container{
-      background-color: darkblue;
+      background-color: none;
     width: 90%;
     height: 60%;
   }
@@ -27,7 +27,7 @@
     margin-top: 10%;
   }
   .item-container{
-    background-color: yellow;
+    background-color: none;
     position: relative;
     height: 40%;
     width: 90%;
@@ -36,7 +36,7 @@
     position: absolute;
     height: 55px;
     width: 100%;
-    background-color: green;
+    background-color: none;
     top: 0px;
     
   }
@@ -46,7 +46,7 @@
     font-size: 15px;
   }
   .price{
-    background-color: red;
+    background-color: none;
     height: 40px;
     position: absolute;
     bottom: 10px;
@@ -57,7 +57,7 @@
     align-items: center;
   }
   .price p{
-    background-color: saddlebrown;
+    background-color: none;
     color: skyblue;
     text-align: center;
     font-size: 3vh;
@@ -67,22 +67,16 @@
   
   }
   .qty{
-    background-color: blue;
+    background-color: none;
     width: 30%;
   }
   .qty-display{
-      background-color: magenta;
+      background-color: none;
       text-align: center;
       width: 40%;
   }
-  .decrement{
-    background-color: red;
-    width: 30%
-  }
-  .increment{
-    background-color: gainsboro;
-    width: 30%
-  }
+  
+  
   .btn{
     border-radius: 10px;
     background-color: whitesmoke;
