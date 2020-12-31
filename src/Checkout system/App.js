@@ -56,23 +56,39 @@ class App extends Component {
      const products  = this.state.Productlist
      const index = products.indexOf(product);
      const item = products[index]
+     if (this.state.cartItem.includes(item)){
+       this.state.cartItem.find(element => {
+         if(element.id === item.id){
+           const repeatedItem = element;
+           this.state.quantity.find(qty => {
+             if(repeatedItem.id === qty.id){
+               const qState = this.state.quantity
+               console.log(qState)
+               const qtyIndex = qState.indexOf(qty)
+               console.log(qState[qtyIndex].value)
+               qState[qtyIndex].value++
+               this.setState(qState)
+             }
+
+             return null
+
+           })
+           
+         }
+         return null
+       })
+       return null
+     }
      this.setState({cartItem: this.state.cartItem.concat(item)})
-     console.log(item)
-     console.log('add to cart was called ' + product.id ); 
-     console.log(this.Pop)
+     //console.log(item)
+     //console.log(this.state.ca); 
+    // console.log(this.Pop)
      
-     this.handleCartQuantity(quantity)
+     
     this.Pop()
    }
 
-   handleCartQuantity = (quantity) => {
-     console.log(quantity)
-     //console.log(`cart quantity ${quantity}`)
-     const cartItemQty = quantity
-
-     return cartItemQty
-   }
-
+   
    handleRemove =  (item) => {
      const cartItem = this.state.cartItem.filter(c => c !== item);
      this.setState({cartItem: cartItem});
@@ -84,6 +100,8 @@ class App extends Component {
      this.setState({cartItem: []})
      console.log(this.state.cartItem)
      console.log('clear cart was called');
+     const defaultQty = this.state.quantity.map(c => c.value = 1);
+     this.setState(defaultQty)
    }
 
    getSum = (total, num) => {
@@ -128,12 +146,27 @@ class App extends Component {
 
   render() { 
     const totalAmount = () => {
-     const total = this.state.cartItem.map(c => c.price
+     const total = this.state.cartItem.map(c => {
+      const inter = this.state.quantity
+      for(let interObj of inter){
+        for(var interKey in interObj){
+          if(interKey === 'id' && interObj[interKey] === c.id){
+            const mult = c.price * interObj.value
+            console.log(mult)
+            return mult
+          }
+          
+        }
+      }
+         
+          
       
-      )
+       return 0
+     })
+     console.log(total)
       const final = total.reduce(this.getSum, 0);
       //console.log('here ' + total)
-      //console.log('final ' + final);
+      console.log('final ' + final);
 
       return final
       
