@@ -1,9 +1,15 @@
 body{
   ackground-color: rgb(24, 24, 34);
-  float: left;
+}
+#root{
+  position: relative;
+  width: 100%;
+  background-color: none;
+  height: fit-content;
+  text-align: center;
 }
 *{
-  box-sizing: border-box;
+  box-sizing:;
   padding: 0;
   margin: 0;
 }
@@ -15,20 +21,25 @@ body{
   align-items: center;
   height: 100%;
 }
-.container{
-  position: absolute;
-  top: 10vh;
+.p-container{
+  background-color: none;
+  position: relative;
+  top: 0;
   bottom: 10vh;
-  height: 100%;
-  padding-bottom: 20vh;
+  height: fit-content;
+  margin-bottom: 50px;
+  margin-right: 0px;
+  padding-bottom: 10vh;
   
 }
-.container-flex{
+.p-container-flex{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  width: 95%;
+  margin: auto;
 }
 .grid{
 display: grid;
@@ -44,13 +55,3 @@ align-items: center;
   border-radius: 10px;
 }
 
-.view{
-  background-color: black;
-  position: fixed;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1000px;
-  height: 1000px;
-}

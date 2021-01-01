@@ -1,6 +1,6 @@
 .cart{
     background-color:  rgb(24, 24, 20);
-    position: relative;
+    position: absolute;
     top: auto;
     left: -40vw;
     height: 1000px;
@@ -133,15 +133,27 @@
   }
   .decrement{
     background-color: none;
+    color: red;
     border: 1px solid red;
     border-style: groove;
     width: 30%
   }
+  .decrement:hover{
+    background-color: maroon;
+    color: whitesmoke;
+  }
   .increment{
     background-color: none;
+    color: blue;
     border: 1px solid green;
     border-style: groove;
-    width: 30%
+    width: 30%;
+  }
+  .increment:hover{
+    background-color: rgb(25, 154, 197);
+    color: whitesmoke;
+    font-size: larger;
+    border: 2px solid whitesmoke;
   }
   .empty{
     width: 100%;

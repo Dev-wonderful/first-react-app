@@ -34,7 +34,7 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
         const Displayproducts = ({item, qty, onAddToCart}) => {
             
             //console.log('eagle' + JSON.stringify(item))
-            //console.log('eaglet' + JSON.stringify(qty))
+        console.log('eaglet' + JSON.stringify(qty))
 
             //const  item  = props.products;
             //const quantityState = props.quantityState;
@@ -46,7 +46,7 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
             return(
                 <>
                     
-                    <div className='products py-5 w-4/5 sm:w-3/6 md:w-96 lg:w-1/4'>
+                    <div className='products py-5 w-4/5 sm:w-3/6 md:w-80 lg:w-1/4'>
 
                         <div className='image-container box-border'>
 
@@ -70,7 +70,7 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
                                     <button className='increment flex-1' onClick={() => onQtyIncrement(qty)}>+</button>
                                 </div>
 
-                                <button className='btn w-1/3' onClick={() => onAddToCart(item, qty)}>Add To Cart</button>
+                                <button className='btn ' onClick={() => onAddToCart(item, qty)}>Add To Cart</button>
                             </div>
                             
                         </div>
@@ -89,7 +89,7 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
 
 
         return(
-            <div className='container container-flex h-screen w-screen '>
+            <div className='p-container p-container-flex h-screen  '>
 
                 
 
@@ -108,6 +108,7 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
 
 
 export default Products
+
 
 
 

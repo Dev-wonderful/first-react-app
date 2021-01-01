@@ -84,8 +84,9 @@
     font-size: small;
     margin-right: 20px;
     height: 30px;
+    width: 100px;
     padding:3px;
-    border: 2px solid navy;
+    border: 1px solid navy;
     border-style: groove;
   }
   .btn:hover{
