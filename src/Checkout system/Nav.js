@@ -18,7 +18,7 @@ function Navbar(props) {
         <>
             <nav className='nav'>
                 
-                <div className='nav-content-container flex'>
+                <div className='nav-content-container '>
                 
                     <Link to="#" className='menu-bars'>
                         <FaCartPlus onClick={props.onShowSideBar}/>
@@ -26,15 +26,21 @@ function Navbar(props) {
                 
                    
 
-                    <ul className='nav-link flex'>
+                    <ul className='nav-link'>
                        
-                        <li>Products</li>
+                        <li>All Products Are Not Real</li>
 
                     </ul>
 
-                    <div className='nav-search w-3/5 sm:w-3/6 flex'>
-                        <input type="text" placeholder='Search for Products'></input>
-                        <button type='submit'>Search</button>
+                    <div className='dropdown'>
+                        <button className='drop-btn'>Category</button>
+                        <div className='dropdown-content'>
+                            <li>Men Clothing</li>
+                            <li>Jewelery</li>
+                            <li>Electronics</li>
+                            <li>Women Clothing</li>
+                            <li>All Categories</li>
+                        </div>
                     </div>
 
                 </div>

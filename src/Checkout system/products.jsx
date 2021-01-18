@@ -6,13 +6,14 @@ import './product.css';
 //import '../index.css';
 //import Displayproducts from './Displayproducts';
 
-const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}) => {
+const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement, filter}) => {
 
     //console.log('baba' + quant)
+    
 
     const loop = (def) => {
         const list = quant.map(element => element.id)
-        //console.log('list is ' + list)
+        //console.time('list is ')
         const found = list.find(element => element === def)
         //console.log(' found is ' + found)
         const main = quant.map(element => {
@@ -34,7 +35,7 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
         const Displayproducts = ({item, qty, onAddToCart}) => {
             
             //console.log('eagle' + JSON.stringify(item))
-        console.log('eaglet' + JSON.stringify(qty))
+       // console.log('eaglet' + JSON.stringify(qty))
 
             //const  item  = props.products;
             //const quantityState = props.quantityState;
@@ -46,33 +47,34 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
             return(
                 <>
                     
-                    <div className='products py-5 w-4/5 sm:w-3/6 md:w-80 lg:w-1/4'>
+                    <div className='products'>
 
-                        <div className='image-container box-border'>
+                        <div className='p-image-container'>
 
 
-                            <img className=' w-full h-full' src={item.image} alt={item.title}/>
+                            <img className='p-image' src={item.image} alt={item.title}/>
 
                             
 
                         </div>
 
-                        <div className='item-container'>
+                        <div className='p-item-container'>
                             
-                            <div className='title px-3 py-3 leading-none overflow-y-auto'><p>{item.title}</p></div>
+                            <div className='p-title '><p>{item.title}</p></div>
                            
-                            <div className='price space-x-2 leading-none px-2'>
+                            <div className='p-price'>
                                 <p>${item.price}</p>
 
-                                <div className='qty flex flex-row px-2'>
-                                    <button className='decrement flex-1' onClick={() => onQtyDecrement(qty)}>-</button>
-                                    <span className='qty-display flex-1'>{qty.value}</span>
-                                    <button className='increment flex-1' onClick={() => onQtyIncrement(qty)}>+</button>
+                                <div className='p-qty '>
+                                    <button className='p-decrement' onClick={() => onQtyDecrement(qty)}>-</button>
+                                    <span className='p-qty-display'>{qty.value}</span>
+                                    <button className='p-increment' onClick={() => onQtyIncrement(qty)}>+</button>
                                 </div>
 
-                                <button className='btn ' onClick={() => onAddToCart(item, qty)}>Add To Cart</button>
                             </div>
                             
+                            <div className='p-btn-div'><button className='p-btn ' onClick={() => onAddToCart(item, qty)}>Add To Cart</button></div>
+
                         </div>
 
 
@@ -89,7 +91,7 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement}
 
 
         return(
-            <div className='p-container p-container-flex h-screen  '>
+            <div className='p-container p-container-flex '>
 
                 
 

@@ -42,7 +42,7 @@ const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar
    
 
         return ( 
-            <div className={sideBar ? 'cart active w-screen sm:w-4/5 md:w-9/12' : 'cart w-0'}>
+            <div className={sideBar ? 'cart active w-screen sm:w-3/5 md:w-3/5 lg:w-2/5'  : 'cart w-0'}>
 
 
                 <div className='flexx'>

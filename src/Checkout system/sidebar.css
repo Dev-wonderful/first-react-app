@@ -18,7 +18,7 @@
   }
 .cart-container{
     background-color: whitesmoke;
-    height: 350px;
+    height: 230px;
     width: 100%;
     margin-top: 5vh;
     margin-bottom: 10px;
@@ -38,39 +38,41 @@
     align-items: center;
     height: fit-content;
   }
-  cart-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    }
+  
 .cart-image-container{
     background-color: whitesmoke;
     border: 1px solid black;
     border-radius: 10px;
+    height: 70%;
+    width: 50%;
+
   }
 .other-container{
-    background-color:none;
-    height: 60%;
+    background-color:orange;
+    height: 70%;
     color: teal;
     padding: 5px;
     border-radius: 10px;
     border-style: groove;
     border: 1px solid green;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: flex-end;
   }
-  .other-container p{
-      background-color: none;
+  .category-div{
+      background-color: maroon;
       font-size: small;
-      margin: 10px;
       text-align: center;
+      height: fit-content;
+      
   }
   .bottom-container{
-      background-color: none;
-      height: 10%;
-      padding: 3px;
-      width: 80%;
-      margin: 5px;
+      background-color: orangered;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 3px;
   }
   .bottom-container p{
       background-color: none;
@@ -122,21 +124,29 @@
       background-color: red;
   }
   .qty{
-    background-color: none;
-    width: 30%;
+    background-color: blue;
+    width: 100%;
     height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
   .qty-display{
       background-color: none;
       text-align: center;
-      width: 40%;
+      width: 100%;
+      border-style: groove;
+      border: 1px solid black;
+      border-left: hidden;
+      border-right: hidden;
   }
   .decrement{
     background-color: none;
     color: red;
     border: 1px solid red;
     border-style: groove;
-    width: 30%
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   .decrement:hover{
     background-color: maroon;
@@ -144,16 +154,17 @@
   }
   .increment{
     background-color: none;
-    color: blue;
+    color: black;
     border: 1px solid green;
     border-style: groove;
-    width: 30%;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   .increment:hover{
     background-color: rgb(25, 154, 197);
     color: whitesmoke;
-    font-size: larger;
-    border: 2px solid whitesmoke;
+    border: 1px solid whitesmoke;
   }
   .empty{
     width: 100%;
@@ -167,4 +178,25 @@
     border-style: groove;
     border-radius: 15px;
     background-color: aliceblue;
+  }
+  @media(max-width: 400px){
+    .cart-container{
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      height: 280px;
+      justify-items: center;
+      
+    }
+    .cart-image-container{
+      width: 90%;
+      height: 120px;
+    }
+    .other-container{
+      height: 150px;
+      width: 90%;
+    }
+    .category-div{
+      height: fit-content;
+      align-self: flex-start;
+    }
   }

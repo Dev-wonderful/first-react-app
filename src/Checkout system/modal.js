@@ -35,7 +35,7 @@ const Modal = ({children, open}) => {
     
 
     return ( 
-        <div style={(open) ? Modal_Styles : Modal_Close}>
+        <div className={open ? 'modal-styles' : 'modal-close'}>
             {children}
         </div>
      );

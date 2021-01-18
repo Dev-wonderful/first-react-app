@@ -1,48 +1,96 @@
 .nav{
     background-color:  rgb(24, 24, 34);;
     width: 100%;
-    height: 70px;
+    height: 50px;
     /**position: sticky;
     top: 0;**/
     z-index: 1;
   }
   .nav-content-container{
-    background-color: none;
+    background-color:none;
     /**max-width: 1100px;**/
     margin: auto;
-    overflow: auto;
+    
     color: whitesmoke;
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    align-content: center;
   }
   
   .nav-link{
     cursor: pointer;
-    width: 30%;
+    width: 100%;
     list-style: none;
   }
   .nav-link li:hover{
     border-bottom: 2px aliceblue solid;
   }
-  .nav-search{
-    background-color: none;
+  .dropdown{
+    background-color: red;
+    width: 200px;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    font-weight: bolder;
   }
-  .nav-search input{
-    height: 40%;
-    width: 60%;
-    font-size: 4vh, 3vw;
-    text-align: center;
-    border-radius: 5px;
+  .dropdown-content{
+    background-color: teal;
+    position: absolute;
+    width: 100%;
+    display: none;
+    z-index: 1000;
   }
-  .nav-search button{
-    height: 30%;
-    width: 30%;
+  .dropdown-content li{
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+    width: 100%;
+    font-family: cursive;
+    font-style: italic;
+    border: 1px solid gray;
+    
+  }
+  .dropdown-content li:last-child{
+    color: navy;
+    background-color: powderblue;
+  }
+  .dropdown-content li:hover{
+    background-color: rgb(199, 191, 191);
+  
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+  .drop-btn{
+    height: 100%;
+    width: 100%;
     color: aliceblue;
+    font-size: medium;
+    font-family: sans-serif;
     background-color: rgb(106, 190, 106);
     font-size: 5vh, 3vw;
-    border-radius: 5px;
+    
   }
   .menu-bars{
+    background-color: thistle;
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
+    width: 100%;
+    justify-self: center;
+  }
+  @media(max-width : 500px){
+    .nav{
+      height: fit-content;
+    }
+    .nav-content-container{
+      display: grid;
+      grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));
+    }
+    .dropdown{
+      height: 100%;
+    }
   }
