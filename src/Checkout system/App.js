@@ -247,7 +247,7 @@ class App extends Component {
 
 
    // this.handleCartQuantity()
-    //totalAmount()
+    totalAmount()
     return ( 
     
         <>
