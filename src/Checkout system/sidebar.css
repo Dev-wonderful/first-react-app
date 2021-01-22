@@ -48,7 +48,7 @@
 
   }
 .other-container{
-    background-color:orange;
+    ackground-color:orange;
     height: 70%;
     color: teal;
     padding: 5px;
@@ -60,14 +60,14 @@
     align-items: flex-end;
   }
   .category-div{
-      background-color: maroon;
+      ackground-color: maroon;
       font-size: small;
       text-align: center;
       height: fit-content;
       
   }
   .bottom-container{
-      background-color: orangered;
+      ackground-color: orangered;
       height: 100%;
       width: 100%;
       display: grid;
@@ -124,7 +124,7 @@
       background-color: red;
   }
   .qty{
-    background-color: blue;
+    ackground-color: blue;
     width: 100%;
     height: fit-content;
     display: grid;
@@ -198,5 +198,9 @@
     .category-div{
       height: fit-content;
       align-self: flex-start;
+    }
+    .empty{
+      font-size: medium;
+      font-weight: bold;
     }
   }

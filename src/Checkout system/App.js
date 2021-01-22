@@ -69,7 +69,7 @@ class App extends Component {
    handleAddToCart = (product, quantity) => {
      
      //const cartItem = [...this.state.cartItem];
-     const products  = this.state.Productlist
+     const products  = this.state.category
      const index = products.indexOf(product);
      const item = products[index]
      if (this.state.cartItem.includes(item)){
@@ -157,49 +157,42 @@ class App extends Component {
     
   }
 
-  handleFilter = () => {
+  handleFilter = (e) => {
     
-    const all = this.state.filter[0]
-    const jewelery = this.state.filter[1]
-    const menClo = this.state.filter[2]
-    const womenClo = this.state.filter[3]
-    const electronics = this.state.filter[4]
+    if (e!=='All Categories' && e){
+      const defaultStatus = this.state.filter.map(s => s.status = false);
+      this.setState(defaultStatus);
 
-        if (all.status) {
-          const allItems = this.state.Productlist;
-          console.log('pass')
-          this.setState({category: allItems})
-          return
-        }else if(jewelery.status){
-          console.log('initial')
-          console.log(this.state.category)
-          const jeweleryItems = this.state.Productlist.filter(c => c.category.includes('jewelery'));
-          console.log('before')
-          if(this.state.category.includes(jeweleryItems)){
-            console.log('passing after')
-            return 
-          }
-          console.log('pele + cat')
-          console.log(this.state.category)
-          this.setState({category: jeweleryItems})
-          console.log('after setting')
-          console.log(this.state.category)
-          console.log('got here')
-          console.log(jeweleryItems)
-          return
-        }else if(menClo.status){
-          const menCloItems = this.state.Productlist.filter(c => c.category.includes('men clothing'));
-          this.setState({category: menCloItems})
-          return
-        }else if(womenClo.status){
-          const womenCloItems = this.state.Productlist.filter(c => c.category.includes('women clothing'));
-          this.setState({category: womenCloItems})
-          return
-        }else if(electronics.status){
-          const electronicItems = this.state.Productlist.filter(c => c.category.includes('electronics'));
-          this.setState({category: electronicItems})
-          return
+      this.state.filter.map(f => {
+        const fCap = f.category.toUpperCase();
+        const eCap = e.toUpperCase();
+        console.log(eCap)
+        if (fCap === eCap) {
+          f.status = true;
+          this.setState(f) 
         }
+  
+        return
+      })
+  
+      this.state.filter.map(f => {
+        
+        if(f.status){
+          const fCap = f.category.toLowerCase();
+            const items = this.state.Productlist.filter(p => p.category===fCap);
+            console.log(items)
+            this.setState({category: items});
+            console.log(this.state.category)
+  
+            return
+          
+        }
+      })
+    }else{
+      const category = this.state.Productlist;
+      this.setState({category: category})
+      
+    }
 
   }
 
@@ -247,14 +240,14 @@ class App extends Component {
 
 
    // this.handleCartQuantity()
-    totalAmount()
+   // totalAmount()
     return ( 
     
         <>
 
           
           <Router>
-          <Navbar onShowSideBar={this.showSideBar}/>
+          <Navbar onShowSideBar={this.showSideBar} filter={this.handleFilter}/>
 
           <Modal open={this.state.isOpen}>This Item has been added to your Cart, Check the top left corner</Modal>
 
@@ -264,7 +257,7 @@ class App extends Component {
 
           <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()} onCartQtyIncrement={this.handleQuantityIncrement} onCartQtyDecrement={this.handleQuantityDecrement} quanty={this.handleCartQuantity} quantityState={this.state.quantity}/>
 
-          <Products key={this.state.Productlist.id} product={this.state.category} onAddToCart={this.handleAddToCart}  quant={this.state.quantity} onQtyIncrement={this.handleQuantityIncrement} onQtyDecrement={this.handleQuantityDecrement} filter={this.handleFilter}/>
+          <Products key={this.state.Productlist.id} product={this.state.category} onAddToCart={this.handleAddToCart}  quant={this.state.quantity} onQtyIncrement={this.handleQuantityIncrement} onQtyDecrement={this.handleQuantityDecrement} />
 
           </Router>  
         </>
