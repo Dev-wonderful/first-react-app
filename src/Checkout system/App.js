@@ -172,7 +172,7 @@ class App extends Component {
           this.setState(f) 
         }
   
-        return
+        return 0
       })
   
       this.state.filter.map(f => {
@@ -184,9 +184,10 @@ class App extends Component {
             this.setState({category: items});
             console.log(this.state.category)
   
-            return
+            return 0
           
         }
+        return 0
       })
     }else{
       const category = this.state.Productlist;
