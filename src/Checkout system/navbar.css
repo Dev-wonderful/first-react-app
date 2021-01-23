@@ -4,6 +4,7 @@
     height: 50px;
     /**position: sticky;
     top: 0;**/
+    padding: 1rem;
     z-index: 1;
   }
   .nav-content-container{
@@ -42,14 +43,13 @@
   .dropdown-content{
     background-color: teal;
     position: absolute;
-    width: 100%;
     display: none;
     z-index: 1000;
   }
   .dropdown-content li{
     background-color: whitesmoke;
     color: black;
-    padding: 10px 15px;
+    padding: 15px;
     display: block;
     width: 100%;
     font-family: cursive;

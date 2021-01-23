@@ -55,7 +55,7 @@ align-items: center;
 .modal-close{
   position: fixed;
   top: 15%;
-  left: -80vw;
+  left: -100vw;
   z-index: 1000;
   background-color: lightblue;
   height: 70px;
@@ -67,6 +67,53 @@ align-items: center;
   border-bottom-right-radius: 15px;
   font-style: italic;
   font-family: sans-serif;
+}
+.hero{
+  height: 500px;
+  font-family: cursive;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hero::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../images/sunlight\ road.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+}
+.hero-container{
+  position: relative;
+}
+.hero-container h1{
+  color: whitesmoke;
+  font-size: 4rem;
+}
+.hero-container p{
+  color: aquamarine;
+  font-size: 1.5rem;
+}
+.footer{
+  background-color: rgb(24, 24, 34);
+  width: 100%;
+  color: whitesmoke;
+  font-size: 0.6rem 1.3rem;
+  font-style: oblique;
+  padding: 3rem;
+  height: fit-content;
+}
+.footer div{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 
@@ -88,4 +135,16 @@ align-items: center;
   .modal-close{
     font-size: 12px;
   }
+  .footer div{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .hero-container h1{
+    
+    font-size: 2.5rem;
+  }
+  .hero-container p{
+    font-size: 1rem;
+  }
 }
+
