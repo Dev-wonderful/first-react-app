@@ -5,7 +5,7 @@ const CartItem = (props) => {
 
     const item = props.item;
     //const qtyState = props.quantityState
-    console.log(props.quanty)
+    //console.log(props.quanty)
 
    
 
@@ -29,7 +29,7 @@ const CartItem = (props) => {
 
                         <p className='cart-price'>${item.price}</p>
                         
-                        <button className='remove-btn' onClick={() => props.onRemove(item)}>Remove</button>
+                        <button className='remove-btn' onClick={() => props.onRemove(item, props.quanty)}>Remove</button>
 
                         <div className='qty'>
                             <button className='decrement' onClick={() => props.onCartQtyDecrement(props.quanty)}>-</button>

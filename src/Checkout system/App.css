@@ -119,21 +119,30 @@ align-items: center;
 
 @media(max-width: 700px) {
   .modal-styles{
-    font-size: 1rem;
+    font-size: 0.9rem;
     width: 90%;
   }
   .modal-close{
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+}
+@media(max-width: 500px) {
+  .modal-styles{
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  .modal-close{
+    font-size: 0.5rem;
   }
 }
 @media(max-width: 400px) {
   .modal-styles{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 10px;
+    font-size: 12px;
     width: 100%;
   }
   .modal-close{
-    font-size: 12px;
+    font-size: 10px;
   }
   .footer div{
     display: grid;

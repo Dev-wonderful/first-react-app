@@ -107,10 +107,19 @@ class App extends Component {
    }
 
    
-   handleRemove =  (item) => {
+   handleRemove =  (item, q) => {
+     console.log('check')
+    const productQty  = this.state.quantity;
+    console.log(q)
+    const index = productQty.indexOf(q);
+    console.log(index)
+    productQty[index].value = 1
+    this.setState(productQty);
      const cartItem = this.state.cartItem.filter(c => c !== item);
      this.setState({cartItem: cartItem});
      console.log('Remove was called ' + item.id);
+     
+     
    }
 
    handleClearCart =() => {
