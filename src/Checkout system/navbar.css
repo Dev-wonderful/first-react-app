@@ -4,7 +4,7 @@
     height: 50px;
     /**position: sticky;
     top: 0;**/
-    padding: 1rem;
+    padding-right: 0.5rem;
     z-index: 1;
   }
   .nav-content-container{
@@ -89,7 +89,7 @@
   }
   .menu-bars{
     background-color: thistle;
-    margin-left: 3rem;
+    margin-left: 2rem;
     font-size: 2rem;
     background: none;
     width: fit-content;
@@ -105,7 +105,7 @@
     }
     .dropdown{
       height: 100%;
-      padding: 0.5rem;
+      padding-bottom: 0.5rem;
     }
     .nav-content-block{
       display: grid;
