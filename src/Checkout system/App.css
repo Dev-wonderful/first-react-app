@@ -73,9 +73,10 @@ align-items: center;
   font-family: cursive;
   position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+
 }
 .hero::before{
   content: '';
@@ -91,6 +92,7 @@ align-items: center;
 }
 .hero-container{
   position: relative;
+
 }
 .hero-container h1{
   color: whitesmoke;
@@ -99,6 +101,23 @@ align-items: center;
 .hero-container p{
   color: aquamarine;
   font-size: 1.5rem;
+}
+.action{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  color: black;
+}
+.action button{
+  background-color: aqua;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 2px;
+}
+.action button:hover{
+  background-color:rgb(44, 83, 83);
+  color: whitesmoke;
 }
 .footer{
   background-color: rgb(24, 24, 34);
