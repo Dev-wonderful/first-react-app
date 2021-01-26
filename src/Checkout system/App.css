@@ -119,6 +119,22 @@ align-items: center;
   background-color:rgb(44, 83, 83);
   color: whitesmoke;
 }
+.carousel-container{
+  height: 300px;
+  width: 100%;
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.carousel{
+  background-color: chocolate;
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+
 .footer{
   background-color: rgb(24, 24, 34);
   width: 100%;

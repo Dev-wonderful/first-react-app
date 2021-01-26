@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import Modal from './modal';
 import Footer from './footer'
 import Hero from './hero';
+import Carousel from './Carousel';
 //import Modal from './modal';
 
 
@@ -270,6 +271,8 @@ class App extends Component {
           <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()} onCartQtyIncrement={this.handleQuantityIncrement} onCartQtyDecrement={this.handleQuantityDecrement} quanty={this.handleCartQuantity} quantityState={this.state.quantity}/>
 
           <Hero />
+
+          <Carousel />
 
           <Products key={this.state.Productlist.id} product={this.state.category} onAddToCart={this.handleAddToCart}  quant={this.state.quantity} onQtyIncrement={this.handleQuantityIncrement} onQtyDecrement={this.handleQuantityDecrement} />
 
