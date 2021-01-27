@@ -42,7 +42,7 @@
   }
   
   .prod-modal-container{
-    background-color: cornflowerblue;
+    background-color: rgb(196, 205, 221);
     height: 100%;
     width: 100%;
     visibility: hidden;
@@ -55,7 +55,7 @@
     
   }
   .prod-modal{
-    background-color: brown;
+    background-color:  rgb(196, 205, 221);
     height: 500px;
     width: 60%;
     position: absolute;
@@ -65,7 +65,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     font-family: cursive;
     z-index: 12;
   }
@@ -213,7 +213,7 @@
       color: palegoldenrod;
   }
   .modal-image-container{
-    background-color: violet;
+    ackground-color: violet;
     width: 95%;
     height: 450px;
     font-size: 10px;
@@ -229,12 +229,17 @@
     margin: auto;
   }
   .modal-item-container{
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    /* display: flex;
+    flex-direction: column; */
     gap: 3px;
-    background-color: blue;
+    ackground-color: blue;
     height: 450px;
     width: 100%;
+  }
+  .prod-description{
+    ackground-color: mediumaquamarine;
+    max-height: 70%;
+    overflow-y: auto;
   }
   .modal-title{
     height: 55px;
@@ -262,7 +267,7 @@
   }
   .modal-price p{
     ackground-color: orchid;
-    color: skyblue;
+    color: rgb(33, 50, 56);
     text-align: center;
     font-size: 0.6rem 1.3rem;
     font-weight: bolder;
@@ -272,6 +277,7 @@
   }
   .modal-qty{
     ackground-color: green;
+    height: 30px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -292,7 +298,8 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-style: groove;
-    width: 100%
+    width: 100%;
+    outline: none;
   }
   .modal-decrement:hover{
     background-color: maroon;
@@ -301,14 +308,14 @@
   .modal-increment{
     background-color: none;
     color: blue;
-    border: 1px solid black;
+    border: 1px solid green;
     border-style: groove;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 100%;
   }
   .modal-increment:hover{
-    background-color: rgb(25, 154, 197);
+    background-color: green;
     color: whitesmoke;
     border: 1px solid whitesmoke;
   }
@@ -316,7 +323,9 @@
     ackground-color: palevioletred;
     margin-bottom: 10px;
     display: grid;
+    height: fit-content;
     grid-template-columns: repeat(2, 1fr);
+    
   }
   
   .modal-btn{
@@ -381,6 +390,6 @@
       height: 250px;
     }
     .prod-description{
-      overflow-y: hidden;
+      overflow-y: auto;
     }
   }

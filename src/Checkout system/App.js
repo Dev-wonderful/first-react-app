@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import Modal from './modal';
 import Footer from './footer'
 import Hero from './hero';
-import Carousel from './Carousel';
+//import Carousel from './Carousel';
 //import Modal from './modal';
 
 
@@ -62,9 +62,12 @@ class App extends Component {
      //const apiUrlTwo = 'C:\Users\owner\first-react-app\src\Checkout system\fakeapi.json'
      fetch(apiUrl)
      .then((response) => response.json())
-     .then((data) => this.setState({Productlist: data}))
-
+     .then(data => this.setState({Productlist: data}))
+     
+     
      this.handleFilter()
+
+
    }
 
    
@@ -251,6 +254,9 @@ class App extends Component {
 
     //this.handleStatusAll()
 
+    //this.handleFilter()
+
+
 
    // this.handleCartQuantity()
    // totalAmount()
@@ -270,9 +276,9 @@ class App extends Component {
 
           <Cart key={this.state.cartItem.id} item={this.state.cartItem} sideBar={this.state.sideBar} onCloseSideBar={this.closeSideBar} onRemove={this.handleRemove} onClearCart={this.handleClearCart} totalPrice={totalAmount()} onCartQtyIncrement={this.handleQuantityIncrement} onCartQtyDecrement={this.handleQuantityDecrement} quanty={this.handleCartQuantity} quantityState={this.state.quantity}/>
 
-          <Hero />
+          <Hero filter={this.handleFilter}/>
 
-          <Carousel />
+          
 
           <Products key={this.state.Productlist.id} product={this.state.category} onAddToCart={this.handleAddToCart}  quant={this.state.quantity} onQtyIncrement={this.handleQuantityIncrement} onQtyDecrement={this.handleQuantityDecrement} />
 

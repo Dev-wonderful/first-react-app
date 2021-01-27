@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hero = () => {
+const Hero = (props) => {
     return ( 
         <div className="hero">
             <div className="hero-container">
@@ -9,11 +9,11 @@ const Hero = () => {
             </div>
 
             <div className='action'>
-                <button>All Categories</button>
-                <button>Electronics</button>
-                <button>Jewelery</button>
-                <button>Women Clothing</button>
-                <button>Men Clothing</button>
+                <button onClick={(e) => props.filter(e.target.innerText)}>All Categories</button>
+                <button onClick={(e) => props.filter(e.target.innerText)}>Electronics</button>
+                <button onClick={(e) => props.filter(e.target.innerText)}>Jewelery</button>
+                <button onClick={(e) => props.filter(e.target.innerText)}>Women Clothing</button>
+                <button onClick={(e) => props.filter(e.target.innerText)}>Men Clothing</button>
             </div>
         </div>
      );
