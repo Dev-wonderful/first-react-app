@@ -36,21 +36,21 @@ align-items: center;
   border-radius: 10px;
 }
 .modal-styles {
-    position: fixed;
-    top: 15%;
-    left: 0;
-    z-index: 1000;
-    background-color: lightblue;
-    height: 70px;
-    width: 80%;
-    text-align: center;
-    line-height: 70px;
-    transition: 500ms;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-style: italic;
-    font-family: sans-serif;
-    font-size: larger;
+  position: fixed;
+  top: 15%;
+  left: 0;
+  z-index: 1000;
+  background-color: lightblue;
+  height: 70px;
+  width: 80%;
+  text-align: center;
+  line-height: 70px;
+  transition: 500ms;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-style: italic;
+  font-family: sans-serif;
+  font-size: larger;
 }
 .modal-close{
   position: fixed;
@@ -76,7 +76,6 @@ align-items: center;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
 }
 .hero::before{
   content: '';

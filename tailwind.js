@@ -3,7 +3,6 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
     enabled: true,
-    content: ['src\Checkout system\cart.jsx']
   },
   presets: [],
   darkMode: false, // or 'media' or 'class'

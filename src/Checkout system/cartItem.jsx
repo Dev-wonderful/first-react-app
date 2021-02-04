@@ -4,8 +4,6 @@ import './sidebar.css'
 const CartItem = (props) => {
 
     const item = props.item;
-    //const qtyState = props.quantityState
-    //console.log(props.quanty)
 
    
 

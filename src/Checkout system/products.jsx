@@ -1,31 +1,19 @@
 import React, { useState } from 'react';
-// import Description from './description';
-//import ReactDOM from 'react-dom';
 import './product.css';
-//import Modal from "./modal";
-//import Quantity from './quantity';
-//import './modal.css';
-//import Displayproducts from './Displayproducts';
 
 const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement, filter}) => {
 
-    //console.log('baba' + quant)
-    
 
     const loop = (def) => {
         const list = quant.map(element => element.id)
-        //console.time('list is ')
         const found = list.find(element => element === def)
-        //console.log(' found is ' + found)
         const main = quant.map(element => {
             if(element.id === found){
                 return element
             }
             return null
         })
-        //console.log(`main is ${main}`)
         const foundMain = main.find(element => element)
-        //console.log(`foundMain is ${foundMain}`)
 
         return foundMain
 
@@ -34,14 +22,6 @@ const Products = ({ product, onAddToCart, quant, onQtyIncrement, onQtyDecrement,
     
 
         const Displayproducts = ({item, qty, onAddToCart}) => {
-            
-            //console.log('eagle' + JSON.stringify(item))
-       // console.log('eaglet' + JSON.stringify(qty))
-
-            //const  item  = props.products;
-            //const quantityState = props.quantityState;
-            //const quantity = props.quantity;
-
 
             const [modal, setModal] = useState(false)
 

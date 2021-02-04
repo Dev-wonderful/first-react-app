@@ -7,8 +7,6 @@ import React, { Component } from 'react';
 import Modal from './modal';
 import Footer from './footer'
 import Hero from './hero';
-//import Carousel from './Carousel';
-//import Modal from './modal';
 
 
 class App extends Component {
@@ -102,9 +100,6 @@ class App extends Component {
        return null
      }
      this.setState({cartItem: this.state.cartItem.concat(item)})
-     //console.log(item)
-     //console.log(this.state.ca); 
-    // console.log(this.Pop)
      
      
     this.Pop()
@@ -127,7 +122,6 @@ class App extends Component {
    }
 
    handleClearCart =() => {
-     //const cartItem = this.state.cartItem
      this.setState({cartItem: []})
      console.log(this.state.cartItem)
      console.log('clear cart was called');
@@ -231,7 +225,6 @@ class App extends Component {
         for(var interKey in interObj){
           if(interKey === 'id' && interObj[interKey] === c.id){
             const mult = c.price * interObj.value
-            //console.log(mult)
             return mult
           }
           
@@ -242,11 +235,8 @@ class App extends Component {
       
        return 0
      })
-     //console.log(total)
       const pre = total.reduce(this.getSum, 0);
       const final = pre.toFixed(2);
-      //console.log('here ' + total)
-      //console.log('final ' + final);
 
       return final
       

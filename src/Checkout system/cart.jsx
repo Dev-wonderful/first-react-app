@@ -6,23 +6,17 @@ import './sidebar.css'
 
 const Cart = ({ item, onRemove, onClearCart, totalPrice, sideBar, onCloseSideBar, onCartQtyIncrement, onCartQtyDecrement, quanty, quantityState }) => {
 
-   //console.log('onremove ' + onRemove)
    const cartQuantity = (def) => {
-       //console.log(quantityState)
 
         const list = quantityState.map(element => element.id)
-        //console.log('list is ' + list)
         const found = list.find(element => element === def)
-        //console.log(' found is ' + found)
         const main = quantityState.map(element => {
             if(element.id === found){
                 return element
             }
             return null
         })
-        //console.log(`main is ${main}`)
         const foundMain = main.find(element => element)
-        //console.log(`foundMain is ${JSON.stringify(foundMain)}`)
 
         return foundMain
 

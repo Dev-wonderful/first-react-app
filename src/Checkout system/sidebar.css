@@ -1,206 +1,202 @@
 .cart{
-    background-color:  rgb(24, 24, 20);
-    position: absolute;
-    top: auto;
-    left: -40vw;
-    height: 1000px;
-    padding: 20px;
-    padding-bottom: 0;
-    padding-top: 5vh;
-    transition: 500ms;
-    z-index: 2;
-    overflow-y: scroll;
-    border-bottom-right-radius: 0;
-  }
-  .cart.active{
-    left: 0;
-    transition: 500ms;
-  }
+  background-color:  rgb(24, 24, 20);
+  position: absolute;
+  top: auto;
+  left: -40vw;
+  height: 1000px;
+  padding: 20px;
+  padding-bottom: 0;
+  padding-top: 5vh;
+  transition: 500ms;
+  z-index: 2;
+  overflow-y: scroll;
+  border-bottom-right-radius: 0;
+}
+.cart.active{
+  left: 0;
+  transition: 500ms;
+}
 .cart-container{
-    background-color: whitesmoke;
-    height: 230px;
-    width: 100%;
-    margin-top: 5vh;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    border-style: groove;
-    border: 2px solid  purple;
-  }
-  .flexx{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: fit-content;
-  }
-  
-.cart-image-container{
-    background-color: whitesmoke;
-    border: 1px solid black;
-    border-radius: 10px;
-    height: 70%;
-    width: 50%;
+  background-color: whitesmoke;
+  height: 230px;
+  width: 100%;
+  margin-top: 5vh;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  border-style: groove;
+  border: 2px solid  purple;
+}
+.flexx{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: fit-content;
+}
 
-  }
+.cart-image-container{
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 70%;
+  width: 50%;
+
+}
 .other-container{
-    ackground-color:orange;
-    height: 70%;
-    color: teal;
-    padding: 5px;
-    border-radius: 10px;
+  height: 70%;
+  color: teal;
+  padding: 5px;
+  border-radius: 10px;
+  border-style: groove;
+  border: 1px solid green;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: flex-end;
+}
+.category-div{
+    font-size: small;
+    text-align: center;
+    height: fit-content;
+    
+}
+.bottom-container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 3px;
+}
+.bottom-container p{
+    background-color: none;
+    padding: 3px;
+    margin: 3px;
+}
+.description{
+    font-size: small;
+    background-color: none;
+    height: 50%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.cart-price{
+    color: rgb(12, 12, 156);
+}
+.total-price{
+  position: sticky;
+  height: 100px;
+  bottom: 0;
+  margin-bottom: 0;
+  background-color: slategray;
+  margin-top: 20px;
+  padding: 20px;
+}
+.remove-btn{
+    background-color: whitesmoke;
+    color: red;
     border-style: groove;
-    border: 1px solid green;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 5px;
+}
+.remove-btn:hover{
+    cursor: pointer;
+    background-color: red;
+    color: whitesmoke;
+}
+.clear-btn{
+  background-color:rgb(143, 10, 10);
+  color: whitesmoke;
+  border-style: groove;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 5px;
+}
+.clear-btn:hover{
+  cursor: pointer;
+  background-color: red;
+}
+.qty{
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.qty-display{
+    background-color: none;
+    text-align: center;
+    width: 100%;
+    border-style: groove;
+    border: 1px solid black;
+    border-left: hidden;
+    border-right: hidden;
+}
+.decrement{
+  background-color: none;
+  color: red;
+  border: 1px solid red;
+  border-style: groove;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.decrement:hover{
+  background-color: maroon;
+  color: whitesmoke;
+}
+.increment{
+  background-color: none;
+  color: black;
+  border: 1px solid green;
+  border-style: groove;
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.increment:hover{
+  background-color: rgb(25, 154, 197);
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+}
+.empty{
+  width: 100%;
+  height: 5%;
+  text-align: center;
+  font-style: italic;
+  font-family: sans-serif;
+  font-size: larger;
+  padding: 8px;
+  margin-top: 3%;
+  border-style: groove;
+  border-radius: 15px;
+  background-color: aliceblue;
+}
+@media(max-width: 400px){
+  .cart-container{
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    align-items: flex-end;
+    height: 280px;
+    justify-items: center;
+    
+  }
+  .cart-image-container{
+    width: 90%;
+    height: 120px;
+  }
+  .other-container{
+    height: 150px;
+    width: 90%;
   }
   .category-div{
-      ackground-color: maroon;
-      font-size: small;
-      text-align: center;
-      height: fit-content;
-      
-  }
-  .bottom-container{
-      ackground-color: orangered;
-      height: 100%;
-      width: 100%;
-      display: grid;
-      grid-template-rows: repeat(3, 1fr);
-      grid-gap: 3px;
-  }
-  .bottom-container p{
-      background-color: none;
-      padding: 3px;
-      margin: 3px;
-  }
-  .description{
-      font-size: small;
-      background-color: none;
-      height: 50%;
-      overflow: scroll;
-      overflow-x: hidden;
-  }
-  .cart-price{
-      color: rgb(12, 12, 156);
-  }
-  .total-price{
-    position: sticky;
-    height: 100px;
-    bottom: 0;
-    margin-bottom: 0;
-    background-color: slategray;
-    margin-top: 20px;
-    padding: 20px;
-  }
-  .remove-btn{
-      background-color: whitesmoke;
-      color: red;
-      border-style: groove;
-      border: 1px solid red;
-      border-radius: 10px;
-      padding: 5px;
-  }
-  .remove-btn:hover{
-      cursor: pointer;
-      background-color: red;
-      color: whitesmoke;
-  }
-  .clear-btn{
-    background-color:rgb(143, 10, 10);
-    color: whitesmoke;
-    border-style: groove;
-    border: 1px solid red;
-    border-radius: 10px;
-    padding: 5px;
-  }
-  .clear-btn:hover{
-      cursor: pointer;
-      background-color: red;
-  }
-  .qty{
-    ackground-color: blue;
-    width: 100%;
     height: fit-content;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .qty-display{
-      background-color: none;
-      text-align: center;
-      width: 100%;
-      border-style: groove;
-      border: 1px solid black;
-      border-left: hidden;
-      border-right: hidden;
-  }
-  .decrement{
-    background-color: none;
-    color: red;
-    border: 1px solid red;
-    border-style: groove;
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  .decrement:hover{
-    background-color: maroon;
-    color: whitesmoke;
-  }
-  .increment{
-    background-color: none;
-    color: black;
-    border: 1px solid green;
-    border-style: groove;
-    width: 100%;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  .increment:hover{
-    background-color: rgb(25, 154, 197);
-    color: whitesmoke;
-    border: 1px solid whitesmoke;
+    align-self: flex-start;
   }
   .empty{
-    width: 100%;
-    height: 5%;
-    text-align: center;
-    font-style: italic;
-    font-family: sans-serif;
-    font-size: larger;
-    padding: 8px;
-    margin-top: 3%;
-    border-style: groove;
-    border-radius: 15px;
-    background-color: aliceblue;
+    font-size: medium;
+    font-weight: bold;
   }
-  @media(max-width: 400px){
-    .cart-container{
-      display: grid;
-      grid-template-rows: repeat(2, 1fr);
-      height: 280px;
-      justify-items: center;
-      
-    }
-    .cart-image-container{
-      width: 90%;
-      height: 120px;
-    }
-    .other-container{
-      height: 150px;
-      width: 90%;
-    }
-    .category-div{
-      height: fit-content;
-      align-self: flex-start;
-    }
-    .empty{
-      font-size: medium;
-      font-weight: bold;
-    }
-  }
+}
